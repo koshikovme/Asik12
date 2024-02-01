@@ -1,0 +1,172 @@
+@import url(https://fonts.googleapis.com/css?family=Michroma);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+}
+
+:root {
+  --container: 1280;
+}
+
+.header-grid {
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 40px;
+  align-items: center;
+  background: black;
+}
+
+.header-grid > *,
+.btn-group button {
+  font-family: "Michroma", sans-serif;
+}
+
+header a {
+  margin-left: 20px;
+}
+
+a img {
+  width: 100px;
+}
+
+header a {
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+header menu {
+  grid-column-start: 4;
+  grid-column-end: 8;
+}
+
+header menu {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 40px;
+  list-style-type: none;
+  align-items: center;
+}
+
+header menu li {
+  text-align: center;
+}
+
+header menu li a {
+  transition: 1s;
+  color: white;
+  text-decoration: none;
+}
+
+header menu li:hover {
+  transform: scale(1.2);
+  transition: 1s;
+}
+
+.active {
+  font-size: 24px;
+
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+header menu li:nth-child(2) {
+  font-size: 12px;
+  grid-column-start: 2;
+  grid-column-end: 7;
+}
+
+header menu li:nth-child(3) {
+  font-size: 12px;
+  grid-column-start: 7;
+  grid-column-end: 10;
+}
+
+header .btn-group {
+  grid-column-start: 12;
+  grid-column-end: 13;
+  float: right;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.jumbotron {
+  background: url("imgs/jumbotron.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: auto;
+  height: 720px;
+  font-family: "Michroma";
+
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+}
+
+.jumbotron h1 {
+  font-size: 56px;
+  color: white;
+}
+.offer {
+  grid-row-start: 3;
+  grid-row-end: 5;
+
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+.offer button {
+  width: 200px;
+  height: 60px;
+
+  border: 5px solid pink;
+  font-family: "Michroma";
+  background: rgb(206, 156, 164);
+  color: white;
+}
+
+.to-fill {
+  grid-row-start: 4;
+  grid-row-end: 13;
+  grid-column-start: 8;
+  grid-column-end: 13;
+}
+
+.to-fill form > input {
+  display: block;
+}
+
+input[type="text"] {
+  background-color: pink;
+  border: 5px solid rgb(206, 156, 164);
+
+  color: white;
+  font-family: "Michroma";
+  width: 300px;
+  height: 50px;
+}
+
+input[type="text"]::placeholder {
+  color: var(--text-secondary);
+  padding-left: 10px;
+  font-weight: 900;
+}
+
+input[type="submit"] {
+  font-family: "Michroma";
+  background: pink;
+  color: white;
+  padding-left: 10px;
+  padding: 20px;
+  font-size: 16px;
+  height: min-content;
+  font-weight: 900;
+
+  margin-top: 20px;
+}

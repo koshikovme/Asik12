@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header-grid">
+      <a href="#"><img src="imgs/logo.png" alt="" /></a>
+      <menu>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="/travelagency">Travel Agency</a></li>
+        <!-- Updated the href to the route -->
+        <li><a href="#">Contacts</a></li>
+      </menu>
+
+      <div class="btn-group">
+        <button>Sign In</button>
+        <button>Sign Up</button>
+      </div>
+    </header>
+
+    <section class="jumbotron">
+      <div>
+        <div>
+          <h1>Weather Information</h1>
+          <div>
+            <h2>City: <%= city %></h2>
+            <p>Temperature: <%= temp %>°C</p>
+            <p>Condition: <%= condition %></p>
+
+            <p>Price: $<%= price %></p>
+
+            <p>Total: $<%= total %></p>
+          </div>
+        </div>
+        <div>
+          <label for="citySelect">Select City:</label>
+          <select id="citySelect" name="cityName" onchange="changeCity()">
+            <!-- Added the name attribute -->
+            <option value="Astana">Astana</option>
+            <option value="London">London</option>
+            <option value="New York">New York</option>
+            <option value="Tokyo">Tokyo</option>
+            <option value="Sydney">Sydney</option>
+          </select>
+        </div>
+      </div>
+      <div class="to-fill">
+        <form action="/weather" method="get" class="form">
+          <label for="subject" class="form__label">Adults</label>
+          <input
+            type="text"
+            placeholder="Number of adults"
+            id="adults"
+            name="adults"
+          />
+
+          <label for="subject" class="form__label">Kids</label>
+          <input
+            type="text"
+            placeholder="Number of kids"
+            class=""
+            id="kids"
+            name="kids"
+          />
+
+          <label for="dateArrival" class="form__label">Arrival Date</label>
+          <input
+            type="date"
+            placeholder="dd.mm.yy"
+            id="dateArrival"
+            name="dateArrival"
+          />
+
+          <label for="dateDeparture" class="form__label">Departure Date</label>
+          <input
+            type="date"
+            placeholder="dd.mm.yy"
+            id="dateDeparture"
+            name="dateDeparture"
+          />
+
+          <label for="subject" class="form__label">Hotel Stars</label>
+          <select id="hotelRatingSelector" name="stars" onchange="changeCity()">
+            <!-- Added the name attribute -->
+            <option value="5">5</option>
+            <option value="4">4</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1</option>
+          </select>
+
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+    </section>
+
+    <link rel="stylesheet" href="travel_agency.css" />
+    <script>
+      function changeCity() {
+        var city = document.getElementById("citySelect").value;
+        window.location.href = "/weather?city=" + city;
+      }
+    </script>
+  </body>
+</html>
